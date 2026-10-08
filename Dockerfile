@@ -26,6 +26,8 @@ RUN	apk del build-base curl wget unzip tzdata openssl && \
 COPY index.html /opt/novnc/index.html
 COPY config /config
 RUN mkdir -p /root/.config/tigervnc
+COPY start-chromium.sh /usr/local/bin/start-chromium.sh
+RUN chmod +x /usr/local/bin/start-chromium.sh
 
 ENV VNC_TITLE="Home Assistant Dashboard" \
 #Local Display Server Port
